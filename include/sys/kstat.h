@@ -157,6 +157,7 @@ typedef struct kstat_timer {
         hrtime_t     stop_time;            /* previous event stop time */
 } kstat_timer_t;
 
+#if 0
 typedef enum kstat_txg_state {
         TXG_STATE_OPEN      = 1,
         TXG_STATE_QUIESCING = 2,
@@ -176,6 +177,7 @@ typedef struct kstat_txg {
         hrtime_t           quiesce_time;/* quiesce time */
         hrtime_t           sync_time;   /* sync time */
 } kstat_txg_t;
+#endif
 
 int spl_kstat_init(void);
 void spl_kstat_fini(void);
