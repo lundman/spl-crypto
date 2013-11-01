@@ -40,11 +40,12 @@ extern unsigned long long monotonic_clock(void);
 void
 __gethrestime(timestruc_t *ts)
 {
-        struct timeval tv;
+	struct timespec tspec;
 
-	do_gettimeofday(&tv);
-	ts->tv_sec = tv.tv_sec;
-	ts->tv_nsec = tv.tv_usec * NSEC_PER_USEC;
+	getnstimeofday(&tspec);
+
+	ts->tv_sec = tspec.tv_sec;
+	ts->tv_nsec = tspec.tv_nsec;
 }
 EXPORT_SYMBOL(__gethrestime);
 
